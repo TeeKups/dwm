@@ -6,3 +6,7 @@ Installed:
 * alternativetags
 * alpha
 * Swallow
+* centeredmaster
+* colorbar
+* gridmode
+* movestack
