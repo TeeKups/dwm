@@ -5,3 +5,4 @@ Installed:
 * Fullgaps
 * alternativetags
 * alpha
+* Swallow
