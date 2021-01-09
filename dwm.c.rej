@@ -1,0 +1,11 @@
+--- dwm.c
++++ dwm.c
+@@ -1762,7 +1840,7 @@ tile(Monitor *m)
+ 		mw = m->nmaster ? m->ww * m->mfact : 0;
+ 	else
+ 		mw = m->ww;
+-	for (i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
++	for (i = my = ty = 0, c = nexttiled(m->cl->clients, m); c; c = nexttiled(c->next, m), i++)
+ 		if (i < m->nmaster) {
+ 			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
+ 			resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), 0);

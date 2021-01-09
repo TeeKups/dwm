@@ -1,0 +1,7 @@
+Wishlist:
+* alpha
+* single tagset
+
+Installed:
+* Fullgaps
+* alternativetags
