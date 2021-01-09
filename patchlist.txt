@@ -10,3 +10,4 @@ Installed:
 * colorbar
 * gridmode
 * movestack
+* statuscmd-signal
