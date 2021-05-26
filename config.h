@@ -25,6 +25,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 //static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
+static const char *printcmd[] = { "gtklp", NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -48,11 +49,11 @@ ResourcePref resources[] = {
 */
 
 ResourcePref resources[] = {
-    { "color6",         STRING, &normbgcolor },
-    { "color7",             STRING, &normbordercolor },
+    { "color5",         STRING, &normbgcolor },
+    { "color6",             STRING, &normbordercolor },
     { "color0",             STRING, &normfgcolor },
-    { "color2",         STRING, &selbgcolor },
-    { "color2",             STRING, &selbordercolor },
+    { "color1",         STRING, &selbgcolor },
+    { "color1",             STRING, &selbordercolor },
     { "color0",             STRING, &selfgcolor },
 };
 
@@ -67,9 +68,9 @@ static char *colors[][3] = {
 	[SchemeInfoNorm]  = { normfgcolor, normbgcolor,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
-static const unsigned int fgalpha = 180;
-static const unsigned int baralpha = 180;
-static const unsigned int borderalpha = 180;
+static const unsigned int fgalpha = 215;
+static const unsigned int baralpha = 215;
+static const unsigned int borderalpha = 215;
 
 /*
 static const char *colors[][3]      = {
@@ -110,6 +111,8 @@ static const Rule rules[] = {
 	{ "st",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "kitty",   NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "mpv",     NULL,     NULL,           0,         0,          0,           0,        -1 },
+	{ "lutris",  NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "xgraph",  NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
@@ -146,6 +149,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+    { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = printcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -176,7 +180,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
 	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = GAP_TOGGLE} },
 	{ MODKEY,                       XK_n,      togglealttag,   {0} },
-    { MODKEY,                       XK_F5,     load_xresources,{0} },
+    //{ MODKEY,                       XK_F5,     load_xresources,{0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
