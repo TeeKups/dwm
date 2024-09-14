@@ -58,7 +58,7 @@ ResourcePref resources[] = {
 };
 
 static char *colors[][3] = {
-    //               fg           bg           border   
+    //               fg           bg           border
     [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
     [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 	[SchemeStatus]  = { normfgcolor, normbgcolor,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
@@ -74,7 +74,7 @@ static const unsigned int borderalpha = 215;
 
 /*
 static const char *colors[][3]      = {
-	//               fg         bg         border   
+	//               fg         bg         border
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 	[SchemeStatus]  = { col_gray3, col_gray1,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
@@ -121,7 +121,7 @@ static float mfact     = 0.51; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
-#include "layouts.c"
+#include "layouts.h"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -144,7 +144,7 @@ static const Layout layouts[] = {
 
 
 
-#include "movestack.c"
+#include "movestack.h"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },

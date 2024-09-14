@@ -5,6 +5,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xft/Xft.h>
 
+#include "types.h"
 #include "drw.h"
 #include "util.h"
 
@@ -374,7 +375,7 @@ drw_map(Drw *drw, Window win, int x, int y, unsigned int w, unsigned int h)
 		return;
 
 	XCopyArea(drw->dpy, drw->drawable, win, drw->gc, x, y, w, h, x, y);
-	XSync(drw->dpy, False);
+	XSync(drw->dpy, false);
 }
 
 unsigned int

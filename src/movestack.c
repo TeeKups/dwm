@@ -1,3 +1,7 @@
+#include <stddef.h>
+#include "dwm.h"
+#include "movestack.h"
+
 void
 movestack(const Arg *arg) {
 	Client *c = NULL, *p = NULL, *pc = NULL, *i;
