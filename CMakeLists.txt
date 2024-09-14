@@ -1,7 +1,7 @@
 # Guaranteed to work with this. Likely works with earlier versions as well.
 # Feel free to try, but I'm not going to.
 cmake_minimum_required(VERSION 3.25)
-project(dwm VERSION 6.2)
+project(dwm VERSION 6.2.1)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
