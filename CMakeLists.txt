@@ -38,3 +38,8 @@ target_link_libraries(dwm
     xcb-res
     Xrender
 )
+
+add_subdirectory(submodules)
+
+include(PackagingInstructions)
+include(CPack)
