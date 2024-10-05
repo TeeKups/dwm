@@ -10,9 +10,10 @@ In order to build dwm you need the Xlib header files.
 ```
 apt-get install -y \
     libx11-dev \
+    libx11-xcb-dev \
     libxinerama-dev \
     libxft-dev \
-    libxcb-res0
+    libxcb-res0-dev
 ```
 
 Installation
