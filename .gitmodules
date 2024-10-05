@@ -1,6 +1,6 @@
 [submodule "dmenu"]
 	path = submodules/dmenu
-	url = git@github.com:TeeKups/dmenu.git
+	url = https://github.com/TeeKups/dmenu.git
 [submodule "dwmblocks"]
 	path = submodules/dwmblocks
-	url = git@github.com:TeeKups/dwmblocks.git
+	url = https://github.com/TeeKups/dwmblocks.git
