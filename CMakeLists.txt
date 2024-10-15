@@ -1,7 +1,7 @@
 # Guaranteed to work with this. Likely works with earlier versions as well.
 # Feel free to try, but I'm not going to.
 cmake_minimum_required(VERSION 3.25)
-project(dwm VERSION 6.2.1)
+project(dwm VERSION 6.2.2)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
@@ -33,9 +33,9 @@ target_link_libraries(dwm
     Xinerama
     fontconfig
     Xft
-    X11-xcb
-    xcb
-    xcb-res
+#    X11-xcb
+#    xcb
+#    xcb-res
     Xrender
 )
 
